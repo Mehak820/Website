@@ -1,0 +1,133 @@
+html{
+    background-image: url(Images/Image.jpeg);
+  
+    filter: brightness(100%);
+    filter: drop-shadow(50%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: rgb(8, 239, 112);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+    text-align: center;
+    color: rgb(0, 234, 255);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+
+h1:hover, h2:hover, h3:hover {
+    transform: scale(1.05);
+    color: #f96103fa; 
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+address, code {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    color: aqua;
+}
+
+address:hover, code:hover{
+    color: #ffa726;
+}
+
+section {
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-10px);
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+li {
+    background: #40dbc6;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+li:hover {
+    background: #4ca1af;
+    color: #fff;
+    cursor: pointer;
+}
+
+.project, .experience {
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #ffa726;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.project:hover, .experience:hover {
+    background-color: #4ca1af;
+    border-left-color: #fff;
+    transform: scale(1.02);
+}
+
+a {
+    color: #ffa726;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4ca1af;
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #f0f8ff;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    section {
+        padding: 10px;
+    }
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
+}

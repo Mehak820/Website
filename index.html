@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Personal Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Interactive Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="loadContent('home')">Home</a></li>
+                <li><a href="#" onclick="loadContent('resume.html')">Resume</a></li>
+                <li><a href="#" onclick="loadContent('hobbies.html')">Hobbies</a></li>
+                <li><a href="#" onclick="loadContent('cheat sheet.html')">Cheat Sheet</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" class="section">
+        <p class="fancy-text">Click on the navigation links above to load content dynamically!</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mehakpreet Kaur | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function loadContent(page) {
+            if (page === 'home') {
+                document.getElementById('main-content').innerHTML = `
+                    <p class="fancy-text">Click on the navigation links above to load content dynamically!</p>
+                `;
+            } else {
+                fetch(page)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById('main-content').innerHTML = data;
+                    })
+                    .catch(error => {
+                        document.getElementById('main-content').innerHTML = '<p>Content failed to load. Please try again later.</p>';
+                        console.error('Error loading content:', error);
+                    });
+            }
+        }
+
+        window.onload = function() {
+            loadContent('home');
+        }
+    </script>
+</body>
+</html>
